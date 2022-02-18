@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-3" class="m">
       <h1>User info</h1>
         
   
@@ -9,16 +9,16 @@
       <%= form_with model:@book do |f| %>
         <div class="mb-3">
             <%= f.label :title, 'Title' %>
-            <%= f.text_field :title %>
+            <%= f.text_field :title, class:"form-control" %>
         </div>    
         <div class="mb-3">  
             <%= f.label :body, 'Opinion' %>
-            <%= f.text_area :body %>
+            <%= f.text_area :body, class:"form-control" %>
         </div>  
             <%= f.submit 'Create Book' %>
           <% end %>
-      </div>
-    <div class="col-lg-8">
+    </div>
+    <div class="col-md-8 offset-md-1">
       <h1>Books</h1>
 
       <table class="table">
