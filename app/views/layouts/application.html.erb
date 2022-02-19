@@ -2,53 +2,49 @@
 <html>
   <head>
     <title>Bookers2_p</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <nav>
-        <div class="container">
-          <li>
-            <%= link_to 'Bookers', '/'%>
-          </li>
-          <!--<li>-->
-          <!--  %= link_to 'Home', user_path(current_user) %>-->
-          <!--</li>-->
-          <% if user_signed_in? %>
-            <!--<li>-->
-            <!--  %= link_to 'Users', user_path %>-->
-            <!--</li>-->
-            <li>
-              <%= link_to 'Books', books_path %>
-            </li>
-            <li>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to 'About', about_path %>
-            </li>
-            <li>
-              <%= link_to "Sign up", new_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "Log in", new_user_session_path %>
-            </li>
-          <% end %>
-        </div>  
-      </nav>  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <li class="navbar-brand" href="#"><%= link_to 'Bookers', '/' %></li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <li><%= link_to 'Books', books_path, class:"nav-link active" %></li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li>
+              <% end %>  
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <%= yield %>
 
     <footer>
-      <p>CopyRight Infratop.inc</p>
+      <p class="text-center">CopyRight Infratop.inc</p>
     </footer>
   </body>
 </html>
