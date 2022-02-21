@@ -1,12 +1,15 @@
-<2>Book detail</h2>
+<h2>Book detail</h2>
 <table class="table">
         <tbody>
           <tr>
             <td>image入る<br><%= link_to @user.name, user_path(@user) %></td>
-            <td>user idはいります</td>
+            <td><%= link_to @book.title, book_path(@book) %></td>
+            <td><%= @book.body %></td>
+            <td>
+              <% if @user == current_user %>
+                <%= link_to 'Edit', edit_book_path(@book), class:"btn btn-sm btn-success" %>
+              <% end %>
+            </td>
           </tr>
         </tbody>
       </table>
-<% if @user == current_user %>
-  <p><%= link_to 'Edit', edit_book_path(@user) %></p>
-<% end %>
