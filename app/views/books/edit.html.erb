@@ -5,5 +5,9 @@
   <%= f.text_field :title, autofocus: true %>
   <%= f.label 'Opinion', :body %>
   <%= f.text_area :body, autofocus: true %>
-  <%= f.submit 'Update Book'%>
+  <%= f.submit 'Update Book' %>
 <% end %>  
+
+<span><%= link_to 'Show', book_path(@book) %></span>
+<span> | </span>
+<span><%= link_to 'Back', books_path %></span>
