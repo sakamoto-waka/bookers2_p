@@ -1,11 +1,31 @@
+<p id="notice"></p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    
+    <%= render :partial => 'user_info', :locals => { :user => current_user } %>
 
-<h1>users index</h1>
+    <div class="col-md-8 offset-md-1">
+      <h2>User info</h2>
+      <!--imageはいります-->
+         <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td>img画像</td>
+                <td><%= user.name %></td>
+                <td><%= link_to 'Show', book_path(user.id) %></td>
+              </tr>
+            <% end %>
 
-<% @users.each do |user| %>
-
-    <p><%= user.name %></p>
-
-
-    <p>まだない:<%= user.introduction %></p>
-
-<% end %>
+      </table>
+    </div>
+  </div>
+</div>
