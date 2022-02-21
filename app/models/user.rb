@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :authentication_keys => [:name]
 
   has_one_attached :profile_image
-  has_many :book, dependent: :destroy
-  
+  has_many :books, dependent: :destroy
+
 
 end
