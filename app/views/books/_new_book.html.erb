@@ -1,12 +1,12 @@
   <!--book投稿フォーム（book index左側）-->
-  <%= form_with model: book do |f| %>
+  <%= form_with model: book, url: books_path, method: :post, local:true do |f| %>
     <div class="mb-3">
         <%= f.label :title, 'Title' %>
         <%= f.text_field :title, class:"form-control" %>
-    </div>    
-    <div class="mb-3">  
+    </div>
+    <div class="mb-3">
         <%= f.label :body, 'Opinion' %>
         <%= f.text_area :body, class:"form-control" %>
-    </div>  
+    </div>
         <%= f.submit 'Create Book', class:"btn btn-success" %>
   <% end %>
