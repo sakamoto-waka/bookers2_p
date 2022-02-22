@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @books = @users.includes(:books)
+    @book = @books.new
   end
 
   def show
