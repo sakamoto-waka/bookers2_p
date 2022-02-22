@@ -1,6 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+body {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .field, .actions {
   margin-bottom: 10px;
 }
