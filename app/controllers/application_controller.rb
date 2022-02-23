@@ -3,14 +3,14 @@ class ApplicationController < ActionController::Base
   # ↓権限の設定 topとabout(sign_in, out)以外は遷移できない
   before_action :authenticate_user!, except: [:top, :about]
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   def after_sign_in_path_for(resource)
     user_path(current_user)
-  end  
-  
+  end
+
   def after_sign_out_path_for(resource)
     '/'
-  end  
+  end
 
   protected
 
