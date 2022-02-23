@@ -22,13 +22,11 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <% if user_signed_in? %>
-                <!--＊＊＊＊要変更＊＊＊＊-->
                 <li class="nav-item">
-                    <%= link_to books_path, class:"nav-link active" do %>
+                    <%= link_to user_path(current_user), class:"nav-link active" do %>
                       <i class="fas fa-home"></i> Home
                     <% end %>
                 </li>
-                <!--ここまで-->
                 <li class="nav-item">
                   <%= link_to  users_path, class:"nav-link active" do %>
                     <i class="fas fa-users"></i> Users
