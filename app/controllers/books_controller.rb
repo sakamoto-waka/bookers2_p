@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     else
       @books = Book.includes(:user)
       @users = User.all
-      render "users/index"
+      render "books/index"
     end
   end
 
