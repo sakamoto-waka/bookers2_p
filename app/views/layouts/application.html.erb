@@ -72,11 +72,8 @@
 
     <main>
       <div id="error_explanation">
-        <% flash.each do |key, value| %>
-          <%= content_tag :div, value, class: key %>
-        <% end %>
+        <p class="notice"><%= notice %></p>
       </div>
-      <p></p>
       <%= yield %>
     </main>
 
