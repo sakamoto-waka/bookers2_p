@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  
   def index
     @books = Book.includes(:user)
     @book = Book.new
@@ -48,5 +49,6 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body, :user_id)
   end
+
 
 end
