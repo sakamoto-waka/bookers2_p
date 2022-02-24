@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @books = @users.includes(:books)
-    @book = Book.new
   end
 
   def show

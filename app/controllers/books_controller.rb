@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.includes(:user)
     @users = User.all
+    @book = Book.new
   end
 
   def create
@@ -14,7 +15,7 @@ class BooksController < ApplicationController
     else
       @books = Book.includes(:user)
       @users = User.all
-      render "books/index"
+      render :index
     end
   end
 
