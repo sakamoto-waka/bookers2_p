@@ -39,7 +39,7 @@
                 </li>
                 <li class="nav-item">
                    <%= link_to destroy_user_session_path, method: :delete, class:"nav-link active" do %>
-                    <i class="fas fa-sign-out-alt"></i> Log out 
+                    <i class="fas fa-sign-out-alt"></i> Log out
                    <% end %>
                 </li>
               <% else %>
@@ -71,9 +71,11 @@
     </header>
 
     <main>
-      <% flash.each do |key, value| %>
-        <%= content_tag :div, value, class: key %>
-      <% end %>
+      <div id="error_explanation">
+        <% flash.each do |key, value| %>
+          <%= content_tag :div, value, class: key %>
+        <% end %>
+      </div>
       <p></p>
       <%= yield %>
     </main>
